@@ -1,0 +1,18 @@
+.header{
+    padding: 20px 52px;
+    border-bottom: 1px solid rgba(28,28,28,.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header__title{
+        color: var(--clr-white);
+        font-weight: 900;
+    }
+    .header__join{
+        border: 1px solid var(--clr-blue);
+        padding: 10px;
+        border-radius: 5px;
+        color: var(--clr-blue);
+    }
+}

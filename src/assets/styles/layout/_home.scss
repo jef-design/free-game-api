@@ -1,0 +1,17 @@
+.game__list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 1.5em;
+    margin-top: 2rem;
+
+    @media screen and (max-width: 1028px) {
+        grid-template-columns: repeat(3,1fr);
+    }
+    @media screen and (max-width: 785px) {
+        grid-template-columns: repeat(2,1fr);
+    }
+    @media screen and (max-width: 524px) {
+        grid-template-columns: repeat(1,1fr);
+    }
+}

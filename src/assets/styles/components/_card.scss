@@ -1,0 +1,88 @@
+a{
+    &:hover .card__loader{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: inherit;
+        left: inherit;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,47,255,.247);
+        
+        
+    }
+    &:hover .spinner-grow{
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        vertical-align: text-bottom;
+        background-color: #49acff;
+        border-radius: 50%;
+        opacity: 0;
+        animation: spinner .75s linear infinite;
+    }
+    color: var(--clr-gray);
+    .card{
+        display: flex;
+        flex-direction: column;
+        background-color: var(--clr-secondary);
+        box-shadow: 0 .5rem 1remrgba(0,0,0,.15)!important;
+        border: 0 solid rgba(0,0,0,.6);
+        border-radius: 0.25rem;
+        transition: all .2s ease-in-out;
+        &:hover{
+            transform: scale(1.02);
+        box-shadow: 0 .9rem 1remrgba(0,0,0,.199)!important;
+        }
+        .card__image__wrapper{
+            position: relative;
+            width: 100%;
+            height: 150px;
+            img{
+                border-top-left-radius: 0.25rem;
+                border-top-right-radius: 0.25rem;
+                width: 100%;
+                height: 100%;
+            }
+            
+        }
+        .card__info{
+            padding: 15px;
+            line-height: 2;
+            .card__title{
+                font-size: 1.2rem;
+                width: 190px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .card__desc{
+                width: 200px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .card__genre{
+                background-color: var(--clr-lg-gray);
+                display: inline-block;
+                font-size: 75%;
+                color: var(--clr-black);
+                font-weight: bolder;
+                padding: 1px 5px;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+@keyframes spinner{
+    0% {
+        transform: scale(0);
+    }
+    
+    50% {
+        opacity: 1;
+    }
+}

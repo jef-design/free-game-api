@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Gantari:wght@300&display=swap");
+:root {
+  --clr-primary: #2a2e33;
+  --clr-secondary: #32383e;
+  --clr-black: #1c1e22;
+  --clr-blue: #49acff;
+  --clr-gray: #aaa;
+  --clr-lg-gray: #7a8288;
+  --clr-white: #ffff;
+}
+
+body {
+  line-height: 1.5;
+}
+
+body {
+  background-color: var(--clr-primary);
+  color: var(--clr-gray);
+  font-family: "Gantari", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+hr {
+  margin-top: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(94, 84, 84, 0.1);
+}
+
+.header {
+  padding: 20px 52px;
+  border-bottom: 1px solid rgba(28, 28, 28, 0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header__title {
+  color: var(--clr-white);
+  font-weight: 900;
+}
+.header .header__join {
+  border: 1px solid var(--clr-blue);
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--clr-blue);
+}
+
+.game__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 1.5em;
+  margin-top: 2rem;
+}
+@media screen and (max-width: 1028px) {
+  .game__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 785px) {
+  .game__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 524px) {
+  .game__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 100px;
+  background-color: var(--clr-black);
+  margin-top: 7%;
+}
+
+a {
+  color: var(--clr-gray);
+}
+a:hover .card__loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: inherit;
+  left: inherit;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 47, 255, 0.247);
+}
+a:hover .spinner-grow {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  background-color: #49acff;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-animation: spinner 0.75s linear infinite;
+          animation: spinner 0.75s linear infinite;
+}
+a .card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-secondary);
+  box-shadow: 0 0.5rem 1remrgba 0, 0, 0, 0.15 !important;
+  border: 0 solid rgba(0, 0, 0, 0.6);
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in-out;
+}
+a .card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0.9rem 1remrgba 0, 0, 0, 0.199 !important;
+}
+a .card .card__image__wrapper {
+  position: relative;
+  width: 100%;
+  height: 150px;
+}
+a .card .card__image__wrapper img {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  width: 100%;
+  height: 100%;
+}
+a .card .card__info {
+  padding: 15px;
+  line-height: 2;
+}
+a .card .card__info .card__title {
+  font-size: 1.2rem;
+  width: 190px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+a .card .card__info .card__desc {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+a .card .card__info .card__genre {
+  background-color: var(--clr-lg-gray);
+  display: inline-block;
+  font-size: 75%;
+  color: var(--clr-black);
+  font-weight: bolder;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.game__background {
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  height: 38rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0rem;
+  z-index: -1;
+  opacity: 0.5;
+}
+.game__background .game__bg__gradient {
+  background: linear-gradient(90deg, #292e33 0%, rgba(35, 46, 46, 0.1) 16.15%, rgba(35, 46, 46, 0.1) 80.21%, #292e33 100%), linear-gradient(180deg, rgb(39, 43, 48) 0%, rgba(0, 0, 0, 0.58) 33.85%, #292e33 100%);
+  height: 101%;
+}
+
+.game__container {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 2em;
+  position: relative;
+}
+.game__container .game__profile {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 75px;
+  z-index: 1;
+  max-height: 500px;
+}
+.game__container .game__profile img {
+  width: 100%;
+}
+.game__container .game__profile .game__profile__btn {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+.game__container .game__profile .game__profile__btn .btn {
+  display: inline-block;
+  color: #aaa;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.game__container .game__profile .game__profile__btn .btn__free {
+  color: #aaa;
+  background-color: #32383e;
+  border-color: #32383e;
+}
+.game__container .game__profile .game__profile__btn .btn__play {
+  color: #fff;
+  background-color: #4799eb;
+  border-color: #4799eb;
+  width: 100%;
+  margin-left: 0.8rem;
+}
+.game__container .game__right .game__about .game__additional {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.game__container .game__right .game__about .game__additional .game__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+.game__container .game__right .game__about .game__screenshots .game__screenshot__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+.game__container .game__right .game__about .game__screenshots .game__screenshot__wrapper .game__ss__container img {
+  width: 100%;
+}
+.game__container .game__right .game__about .game__requirements .game__requirements__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+}
+.game__container .game__right .game__about .game__requirements .game__requirements__wrapper .game__req__container {
+  margin-bottom: 20px;
+}/*# sourceMappingURL=main.css.map */
