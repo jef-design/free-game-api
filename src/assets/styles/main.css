@@ -62,7 +62,7 @@ hr {
 }
 
 .header {
-  padding: 20px 52px;
+  padding: 20px;
   border-bottom: 1px solid rgba(28, 28, 28, 0.6);
   display: flex;
   justify-content: space-between;
@@ -272,6 +272,11 @@ a .card .card__info .card__genre {
   width: 100%;
   margin-left: 0.8rem;
 }
+@media screen and (max-width: 785px) {
+  .game__container .game__profile {
+    position: static;
+  }
+}
 .game__container .game__right .game__about .game__additional {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -289,6 +294,11 @@ a .card .card__info .card__genre {
 .game__container .game__right .game__about .game__screenshots .game__screenshot__wrapper .game__ss__container img {
   width: 100%;
 }
+@media screen and (max-width: 785px) {
+  .game__container .game__right .game__about .game__screenshots .game__screenshot__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .game__container .game__right .game__about .game__requirements .game__requirements__wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -296,4 +306,9 @@ a .card .card__info .card__genre {
 }
 .game__container .game__right .game__about .game__requirements .game__requirements__wrapper .game__req__container {
   margin-bottom: 20px;
+}
+@media screen and (max-width: 785px) {
+  .game__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }/*# sourceMappingURL=main.css.map */
